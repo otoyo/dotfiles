@@ -1,0 +1,17 @@
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    ui = true
+[color "branch"]
+    current = green bold
+    local = yellow
+    remote = cyan
+[color "diff"]
+    meta = yellow
+    frag = green bold
+    old = red
+    new = cyan
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
