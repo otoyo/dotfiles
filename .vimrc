@@ -32,6 +32,7 @@ syntax on
 
 set ambiwidth=double
 set autoindent
+set directory=~/.vim/swp
 set expandtab
 set hlsearch
 set number
