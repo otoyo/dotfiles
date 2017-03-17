@@ -36,12 +36,11 @@ set directory=~/.vim/swp
 set expandtab
 set hlsearch
 set number
-set shiftwidth=4
 set showmatch
 set smartcase
 set smartindent
 set smarttab
 set t_Co=256
-set tabstop=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 
 colorscheme jellybeans
