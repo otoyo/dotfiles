@@ -70,6 +70,16 @@ function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
 
+" Ag command on grep source
+call denite#custom#var('grep', {
+			\ 'command': ['ag'],
+			\ 'default_opts': ['-i', '--vimgrep'],
+			\ 'recursive_opts': [],
+			\ 'pattern_opt': [],
+			\ 'separator': ['--'],
+			\ 'final_opts': [],
+			\ })
+
 
 set number
 
