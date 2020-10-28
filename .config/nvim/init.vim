@@ -40,9 +40,13 @@ call deoplete#custom#option({
     \ })
 
 " denite
-nmap <silent> ,f :<C-u>Denite -direction=topleft -split=vertical -start-filter file/rec<CR>
-nmap <silent> ,g :<C-u>Denite -direction=topleft -split=vertical grep<CR>
-nmap <silent> ,r :<C-u>Denite -direction=topleft -split=vertical file_mru<CR>
+call denite#custom#option('default', {'direction': 'aboveleft'})
+nmap <silent> ,f  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
+nmap <silent> ,g  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` grep<CR>
+nmap <silent> ,r  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` file_mru<CR>
+nmap <silent> ,vf :<C-u>Denite -default-action=vsplit -split=vertical -start-filter file/rec<CR>
+nmap <silent> ,vg :<C-u>Denite -default-action=vsplit -split=vertical grep<CR>
+nmap <silent> ,vr :<C-u>Denite -default-action=vsplit -split=vertical file_mru<CR>
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -65,8 +69,6 @@ autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
-
-call denite#custom#kind('file', 'default_action', 'vsplit')
 
 
 set number
