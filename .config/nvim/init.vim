@@ -37,9 +37,9 @@ call deoplete#custom#option({
     \ })
 
 " denite
-nmap <silent> ,f :<C-u>Denite file/rec<CR>
-nmap <silent> ,g :<C-u>Denite grep<CR>
-nmap <silent> ,r :<C-u>Denite file_mru<CR>
+nmap <silent> ,f :<C-u>Denite -direction=topleft -split=vertical -start-filter file/rec<CR>
+nmap <silent> ,g :<C-u>Denite -direction=topleft -split=vertical grep<CR>
+nmap <silent> ,r :<C-u>Denite -direction=topleft -split=vertical file_mru<CR>
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
