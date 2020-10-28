@@ -32,8 +32,8 @@ call plug#end()
 
 " deoplete
 call deoplete#custom#option({
-    \ 'skip_multibyte': v:true,
     \ 'min_pattern_length': 5,
+    \ 'skip_multibyte': v:true,
     \ })
 
 " denite
