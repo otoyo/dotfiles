@@ -32,6 +32,9 @@ call plug#end()
 
 " deoplete
 call deoplete#custom#option({
+    \ 'ignore_sources': {
+    \  '_': ['around'],
+    \ },
     \ 'min_pattern_length': 5,
     \ 'skip_multibyte': v:true,
     \ })
