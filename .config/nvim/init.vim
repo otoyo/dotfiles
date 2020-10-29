@@ -11,7 +11,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -40,14 +39,6 @@ call deoplete#custom#option({
     \ })
 
 " denite
-call denite#custom#option('default', {'direction': 'aboveleft'})
-nmap <silent> ,f  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
-nmap <silent> ,g  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` grep<CR>
-nmap <silent> ,r  :<C-u>Denite -default-action=split  -split=horizontal -winheight=`winheight(0)/2` file_mru<CR>
-nmap <silent> ,vf :<C-u>Denite -default-action=vsplit -split=vertical -start-filter file/rec<CR>
-nmap <silent> ,vg :<C-u>Denite -default-action=vsplit -split=vertical grep<CR>
-nmap <silent> ,vr :<C-u>Denite -default-action=vsplit -split=vertical file_mru<CR>
-
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
@@ -64,21 +55,29 @@ function! s:denite_my_settings() abort
   \ denite#do_map('toggle_select').'j'
 endfunction
 
+" Ripgrep command on grep source
+call denite#custom#var('grep', {
+			\ 'command': ['rg'],
+			\ 'default_opts': ['-i', '--vimgrep', '--no-heading'],
+			\ 'recursive_opts': [],
+			\ 'pattern_opt': ['--regexp'],
+			\ 'separator': ['--'],
+			\ 'final_opts': [],
+			\ })
+
 " ref. https://github.com/Shougo/denite.nvim/issues/657
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
 
-" Ag command on grep source
-call denite#custom#var('grep', {
-			\ 'command': ['ag'],
-			\ 'default_opts': ['-i', '--vimgrep'],
-			\ 'recursive_opts': [],
-			\ 'pattern_opt': [],
-			\ 'separator': ['--'],
-			\ 'final_opts': [],
-			\ })
+call denite#custom#option('default', {'direction': 'aboveleft'})
+nmap <silent> ,f :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
+nmap <silent> ,g :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep:::<C-r><C-a><CR>
+nmap <silent> ,G :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep:::<C-r><C-a><CR>
+nmap <silent> ,vf :<C-u>Denite -default-action=vsplit -split=vertical -start-filter file/rec<CR>
+nmap <silent> ,vg :<C-u>Denite -default-action=vsplit -split=vertical grep:::<C-r><C-w><CR>
+nmap <silent> ,vG :<C-u>Denite -default-action=vsplit -split=vertical grep:::<C-r><C-a><CR>
 
 
 set number
