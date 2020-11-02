@@ -72,11 +72,11 @@ function! s:denite_filter_my_settings() abort
 endfunction
 
 call denite#custom#option('default', {'direction': 'aboveleft'})
-nmap <silent> ;f :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
+nmap <silent> ;f :<C-u>DeniteProjectDir -default-action=split -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
 nmap <silent> ;g :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep:::<C-r><C-w><CR>
 nmap <silent> ;G :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep:::<C-r><C-a><CR>
 nmap <silent> ;;g :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep<CR>
-nmap <silent> ;vf :<C-u>Denite -default-action=vsplit -split=vertical -start-filter file/rec<CR>
+nmap <silent> ;vf :<C-u>DeniteProjectDir -default-action=vsplit -split=vertical -start-filter file/rec<CR>
 nmap <silent> ;vg :<C-u>Denite -default-action=vsplit -split=vertical grep:::<C-r><C-w><CR>
 nmap <silent> ;vG :<C-u>Denite -default-action=vsplit -split=vertical grep:::<C-r><C-a><CR>
 nmap <silent> ;;vg :<C-u>Denite -default-action=vsplit -split=vertical grep<CR>
