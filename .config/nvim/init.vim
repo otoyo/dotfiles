@@ -71,15 +71,27 @@ function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
 
-call denite#custom#option('default', {'direction': 'aboveleft'})
-nmap <silent> ;f :<C-u>DeniteProjectDir -default-action=split -split=horizontal -winheight=`winheight(0)/2` -start-filter file/rec<CR>
-nmap <silent> ;g :<C-u>DeniteCursorWord -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep<CR>
-nmap <silent> ;G :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep:::<C-r><C-a><CR>
-nmap <silent> ;;g :<C-u>Denite -default-action=split -split=horizontal -winheight=`winheight(0)/2` grep<CR>
-nmap <silent> ;vf :<C-u>DeniteProjectDir -default-action=vsplit -split=vertical -start-filter file/rec<CR>
-nmap <silent> ;vg :<C-u>DeniteCursorWord -default-action=vsplit -split=vertical grep<CR>
-nmap <silent> ;vG :<C-u>Denite -default-action=vsplit -split=vertical grep:::<C-r><C-a><CR>
-nmap <silent> ;;vg :<C-u>Denite -default-action=vsplit -split=vertical grep<CR>
+call denite#custom#option('split-buffer', {
+			\ 'default_action': 'split',
+			\ 'direction': 'aboveleft',
+			\ 'split': 'horizontal',
+			\ 'winheight': winheight(0)/2,
+			\ })
+
+call denite#custom#option('vsplit-buffer', {
+			\ 'default_action': 'vsplit',
+			\ 'direction': 'aboveleft',
+			\ 'split': 'vertical',
+			\ })
+
+nmap <silent> ;f :<C-u>DeniteProjectDir -buffer-name=split-buffer -start-filter file/rec<CR>
+nmap <silent> ;g :<C-u>DeniteProjectDir -buffer-name=split-buffer grep:::<C-r><C-w><CR>
+nmap <silent> ;G :<C-u>DeniteProjectDir -buffer-name=split-buffer grep:::<C-r><C-a><CR>
+nmap <silent> ;;g :<C-u>DeniteProjectDir -buffer-name=split-buffer -winheight=`winheight(0)/2` grep<CR>
+nmap <silent> ;vf :<C-u>DeniteProjectDir -buffer-name=vsplit-buffer -start-filter file/rec<CR>
+nmap <silent> ;vg :<C-u>DeniteProjectDir -buffer-name=vsplit-buffer grep:::<C-r><C-w><CR>
+nmap <silent> ;vG :<C-u>DeniteProjectDir -buffer-name=vsplit-buffer grep:::<C-r><C-a><CR>
+nmap <silent> ;;vg :<C-u>DeniteProjectDir -buffer-name=vspli-buffert grep<CR>
 
 
 set number
