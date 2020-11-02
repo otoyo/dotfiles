@@ -34,7 +34,7 @@ call deoplete#custom#option({
     \ 'ignore_sources': {
     \  '_': ['around'],
     \ },
-    \ 'min_pattern_length': 5,
+    \ 'min_pattern_length': 4,
     \ 'skip_multibyte': v:true,
     \ })
 
