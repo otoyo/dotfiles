@@ -27,9 +27,11 @@ colorscheme jellybeans
 set completeopt=menuone,noinsert
 set noincsearch
 set number
+set pumblend=15
 set scrolloff=5
 set title
 set ttimeoutlen=10
+set termguicolors
 
 " Key mappings
 inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"

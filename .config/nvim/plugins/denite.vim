@@ -35,6 +35,12 @@ function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
 
+augroup denite-transparent-windows
+  autocmd!
+  autocmd FileType denite set winblend=15
+  autocmd FileType denite-filter set winblend=15
+augroup END
+
 call denite#custom#option('denite-sp', {
 \ 'default_action': 'split',
 \ 'direction': 'aboveleft',
