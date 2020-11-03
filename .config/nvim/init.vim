@@ -2,6 +2,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 " Color scheme
 Plug 'nanotech/jellybeans.vim'
+Plug 'cocopon/iceberg.vim'
 " Interface
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -21,9 +22,10 @@ call plug#end()
 runtime! plugins/*.vim
 
 " Color scheme
-colorscheme jellybeans
+colorscheme iceberg
 
 " Settings
+set background=dark
 set completeopt=menuone,noinsert
 set noincsearch
 set number
