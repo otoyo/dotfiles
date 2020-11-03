@@ -1,3 +1,6 @@
+let s:floating_window_width_ratio = 0.85
+let s:floating_window_height_ratio = 0.7
+
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
@@ -44,12 +47,21 @@ augroup END
 call denite#custom#option('denite-sp', {
 \ 'default_action': 'split',
 \ 'direction': 'aboveleft',
-\ 'split': 'horizontal',
-\ 'winheight': winheight(0)/2,
+\ 'prompt': '% ',
+\ 'split': 'floating',
+\ 'wincol': float2nr((&columns - (&columns * s:floating_window_width_ratio)) / 2),
+\ 'winheight': winheight(0) * s:floating_window_height_ratio,
+\ 'winrow': float2nr((&lines - (&lines * s:floating_window_height_ratio)) / 2),
+\ 'winwidth': float2nr(&columns * s:floating_window_width_ratio),
 \ })
 
 call denite#custom#option('denite-vs', {
 \ 'default_action': 'vsplit',
 \ 'direction': 'aboveleft',
-\ 'split': 'vertical',
+\ 'prompt': '% ',
+\ 'split': 'floating',
+\ 'wincol': float2nr((&columns - (&columns * s:floating_window_width_ratio)) / 2),
+\ 'winheight': winheight(0) * s:floating_window_height_ratio,
+\ 'winrow': float2nr((&lines - (&lines * s:floating_window_height_ratio)) / 2),
+\ 'winwidth': float2nr(&columns * s:floating_window_width_ratio),
 \ })
