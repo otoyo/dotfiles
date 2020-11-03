@@ -95,6 +95,7 @@ nmap <silent> ;;vg :<C-u>DeniteProjectDir -buffer-name=vspli-buffert grep<CR>
 
 
 set number
+set ttimeoutlen=10
 
 colorscheme jellybeans
 
