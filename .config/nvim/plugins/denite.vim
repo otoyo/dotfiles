@@ -14,6 +14,10 @@ function! s:denite_my_settings() abort
   \ denite#do_map('toggle_select').'j'
 endfunction
 
+" Change file/rec command
+call denite#custom#var('file/rec', 'command',
+\ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
+
 " Ripgrep command on grep source
 call denite#custom#var('grep', {
 \ 'command': ['rg'],
