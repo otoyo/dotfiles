@@ -25,7 +25,10 @@ colorscheme jellybeans
 
 " Settings
 set completeopt=menuone,noinsert
+set noincsearch
 set number
+set scrolloff=5
+set title
 set ttimeoutlen=10
 
 " Key mappings
