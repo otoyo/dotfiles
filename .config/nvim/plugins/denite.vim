@@ -9,9 +9,9 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
+  nnoremap <silent><buffer><expr> <Esc>
   \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
+  nnoremap <silent><buffer><expr> a
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
