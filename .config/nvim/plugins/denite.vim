@@ -37,6 +37,7 @@ autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
   imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+  nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
 endfunction
 
 augroup denite-transparent-windows
