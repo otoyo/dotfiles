@@ -52,7 +52,7 @@ call denite#custom#option('denite-sp', {
 \ 'prompt': '% ',
 \ 'split': 'floating',
 \ 'wincol': float2nr((&columns - (&columns * s:floating_window_width_ratio)) / 2),
-\ 'winheight': winheight(0) * s:floating_window_height_ratio,
+\ 'winheight': float2nr(&lines * s:floating_window_height_ratio),
 \ 'winrow': float2nr((&lines - (&lines * s:floating_window_height_ratio)) / 2),
 \ 'winwidth': float2nr(&columns * s:floating_window_width_ratio),
 \ })
@@ -63,7 +63,7 @@ call denite#custom#option('denite-vs', {
 \ 'prompt': '% ',
 \ 'split': 'floating',
 \ 'wincol': float2nr((&columns - (&columns * s:floating_window_width_ratio)) / 2),
-\ 'winheight': winheight(0) * s:floating_window_height_ratio,
+\ 'winheight': float2nr(&lines * s:floating_window_height_ratio),
 \ 'winrow': float2nr((&lines - (&lines * s:floating_window_height_ratio)) / 2),
 \ 'winwidth': float2nr(&columns * s:floating_window_width_ratio),
 \ })
