@@ -40,8 +40,10 @@ set termguicolors
 inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>"   : "<C-p>"
-nmap <silent> ;f   :<C-u>DeniteProjectDir -buffer-name=denite-sp -start-filter file/rec<CR>
-nmap <silent> ;vf  :<C-u>DeniteProjectDir -buffer-name=denite-vs -start-filter file/rec<CR>
+nmap <silent> ;f   :<C-u>Denite -buffer-name=denite-sp -start-filter file:new file/rec<CR>
+nmap <silent> ;vf  :<C-u>Denite -buffer-name=denite-vs -start-filter file:new file/rec<CR>
+nmap <silent> ;F   :<C-u>DeniteProjectDir -buffer-name=denite-sp -start-filter file:new file/rec<CR>
+nmap <silent> ;vF  :<C-u>DeniteProjectDir -buffer-name=denite-vs -start-filter file:new file/rec<CR>
 nmap <silent> ;;f  :<C-u>DeniteProjectDir -buffer-name=denite-sp file_mru<CR>
 nmap <silent> ;;vf :<C-u>DeniteProjectDir -buffer-name=denite-vs file_mru<CR>
 nmap <silent> ;g   :<C-u>DeniteProjectDir -buffer-name=denite-sp grep:::<C-r><C-w><CR>
