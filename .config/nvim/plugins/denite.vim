@@ -9,8 +9,12 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> <Esc>
   \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> a
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
@@ -36,6 +40,7 @@ call denite#custom#var('grep', {
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   call deoplete#custom#buffer_option('auto_complete', v:false)
+  nmap <silent><buffer> q     <Plug>(denite_filter_quit)
   imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
   nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
 endfunction
