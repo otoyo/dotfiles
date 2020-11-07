@@ -80,3 +80,17 @@ call denite#custom#option('denite-vs', {
 \ 'winrow': float2nr((&lines - (&lines * s:floating_window_height_ratio)) / 2),
 \ 'winwidth': float2nr(&columns * s:floating_window_width_ratio / 2),
 \ })
+
+" Key mappings
+nmap <silent> ;f   :<C-u>Denite -buffer-name=denite-sp -start-filter file/rec file:new<CR>
+nmap <silent> ;vf  :<C-u>Denite -buffer-name=denite-vs -start-filter file/rec file:new<CR>
+nmap <silent> ;F   :<C-u>DeniteProjectDir -buffer-name=denite-sp -start-filter file/rec file:new<CR>
+nmap <silent> ;vF  :<C-u>DeniteProjectDir -buffer-name=denite-vs -start-filter file/rec file:new<CR>
+nmap <silent> ;;f  :<C-u>DeniteProjectDir -buffer-name=denite-sp file_mru<CR>
+nmap <silent> ;;vf :<C-u>DeniteProjectDir -buffer-name=denite-vs file_mru<CR>
+nmap <silent> ;g   :<C-u>DeniteProjectDir -buffer-name=denite-sp grep:::<C-r><C-w><CR>
+nmap <silent> ;vg  :<C-u>DeniteProjectDir -buffer-name=denite-vs grep:::<C-r><C-w><CR>
+nmap <silent> ;G   :<C-u>DeniteProjectDir -buffer-name=denite-sp grep:::<C-r><C-a><CR>
+nmap <silent> ;vG  :<C-u>DeniteProjectDir -buffer-name=denite-vs grep:::<C-r><C-a><CR>
+nmap <silent> ;;g  :<C-u>DeniteProjectDir -buffer-name=denite-sp grep<CR>
+nmap <silent> ;;vg :<C-u>DeniteProjectDir -buffer-name=denite-vs grep<CR>
