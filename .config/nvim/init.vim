@@ -28,6 +28,7 @@ colorscheme iceberg
 " Settings
 set background=dark
 set completeopt=menuone,noinsert
+set cursorline
 set noincsearch
 set number
 set pumblend=15
