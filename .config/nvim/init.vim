@@ -29,13 +29,16 @@ colorscheme iceberg
 set background=dark
 set completeopt=menuone,noinsert
 set cursorline
+set expandtab
 set noincsearch
 set number
 set pumblend=15
 set scrolloff=5
+set shiftwidth=2
+set tabstop=2
+set termguicolors
 set title
 set ttimeoutlen=10
-set termguicolors
 
 " Key mappings
 inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"
