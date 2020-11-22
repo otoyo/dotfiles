@@ -46,5 +46,13 @@ set ttimeoutlen=10
 inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>"   : "<C-p>"
+" Denite
+nmap <silent> ;f  :<C-u>Denite -start-filter file/rec<CR>
+nmap <silent> ;F  :<C-u>DeniteProjectDir -start-filter file/rec<CR>
+nmap <silent> ;;f :<C-u>DeniteProjectDir file_mru<CR>
+nmap <silent> ;g  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
+nmap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-a><CR>
+nmap <silent> ;;g :<C-u>Denite grep<CR>
+nmap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
 " Defx
 nnoremap <silent> ;d :<C-u>Defx<CR>
