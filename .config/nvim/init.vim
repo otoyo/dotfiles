@@ -6,6 +6,7 @@ Plug 'cocopon/iceberg.vim'
 " Interface
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -41,6 +42,9 @@ set title
 set ttimeoutlen=10
 
 " Key mappings
+" Deoplete
 inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>"   : "<C-p>"
+" Defx
+nnoremap <silent> ;d :<C-u>Defx<CR>
