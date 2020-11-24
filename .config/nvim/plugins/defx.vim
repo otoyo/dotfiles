@@ -10,9 +10,10 @@ call defx#custom#option('_', {
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
-  \ defx#do_action('drop', 'vsplit')
+  \ defx#is_directory() ? defx#do_action('open') :
+  \ defx#do_action('multi', [['drop', 'vsplit'], 'quit'])
   nnoremap <silent><buffer><expr> <Space>
-  \ defx#do_action('drop', 'split')
+  \ defx#do_action('multi', [['drop', 'split'], 'quit'])
   nnoremap <silent><buffer><expr> <Esc>
   \ defx#do_action('quit')
   nnoremap <silent><buffer><expr> q
