@@ -28,11 +28,11 @@ function! s:defx_my_settings() abort
   \ defx#do_action('remove')
   nnoremap <silent><buffer><expr> r
   \ defx#do_action('rename')
-  nnoremap <silent><buffer><expr> m
+  nnoremap <silent><buffer><expr> mv
   \ defx#do_action('move')
-  nnoremap <silent><buffer><expr> n
+  nnoremap <silent><buffer><expr> t
   \ defx#do_action('new_file')
-  nnoremap <silent><buffer><expr> N
+  nnoremap <silent><buffer><expr> mk
   \ defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> yy
   \ defx#do_action('yank_path')
