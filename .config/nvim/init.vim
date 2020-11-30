@@ -18,6 +18,8 @@ Plug 'slashmili/alchemist.vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 " Ruby
 Plug 'vim-ruby/vim-ruby'
+" Utils
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " Load plugin settings
