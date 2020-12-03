@@ -30,6 +30,7 @@ colorscheme iceberg
 
 " Settings
 set background=dark
+set clipboard+=unnamed
 set completeopt=menuone,noinsert
 set cursorline
 set expandtab
