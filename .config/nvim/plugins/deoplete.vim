@@ -6,6 +6,6 @@ call deoplete#custom#option({
 \ 'ignore_sources': {
 \  '_': ['omni'],
 \ },
-\ 'min_pattern_length': 4,
+\ 'min_pattern_length': 2,
 \ 'skip_multibyte': v:true,
 \ })
