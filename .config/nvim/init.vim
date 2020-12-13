@@ -1,3 +1,6 @@
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Plugins / Make sure you use single quotes
 call plug#begin(stdpath('data') . '/plugged')
 " Color scheme
