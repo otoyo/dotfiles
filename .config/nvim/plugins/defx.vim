@@ -7,6 +7,11 @@ call defx#custom#option('_', {
 \ 'resume': 1,
 \ })
 
+" Nerd Fonts
+call defx#custom#column('icon', {
+\ 'directory_icon': '',
+\ })
+
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
   let g:better_whitespace_enabled=0
