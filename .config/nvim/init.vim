@@ -66,7 +66,7 @@ nmap <silent> ;;g :<C-u>Denite grep<CR>
 nmap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
 nmap <silent> ;r  :<C-u>Denite -resume<CR>
 " Defx
-nnoremap <silent> ;d :<C-u>Defx<CR>
+nnoremap <silent> ;d :<C-u>Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
