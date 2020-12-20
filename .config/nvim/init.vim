@@ -25,6 +25,9 @@ Plug 'slashmili/alchemist.vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 " Ruby
 Plug 'vim-ruby/vim-ruby'
+" TypeScript
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 " Utils
 Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
