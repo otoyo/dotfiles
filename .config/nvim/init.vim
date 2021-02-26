@@ -63,8 +63,8 @@ inoremap <expr><C-p> pumvisible() ? "<Up>"   : "<C-p>"
 nmap <silent> ;f  :<C-u>Denite -start-filter file/rec<CR>
 nmap <silent> ;F  :<C-u>DeniteProjectDir -start-filter file/rec<CR>
 nmap <silent> ;;f :<C-u>DeniteProjectDir file_mru<CR>
-nmap <silent> ;g  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
-nmap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-a><CR>
+nmap <silent> ;g  :<C-u>DeniteProjectDir grep/ignore_test:::<C-r><C-w><CR>
+nmap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
 nmap <silent> ;;g :<C-u>Denite grep<CR>
 nmap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
 nmap <silent> ;r  :<C-u>Denite -resume<CR>

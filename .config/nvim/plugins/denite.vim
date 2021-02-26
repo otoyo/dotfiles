@@ -31,6 +31,16 @@ call denite#custom#var('grep', {
 \ 'final_opts': [],
 \ })
 
+call denite#custom#alias('source', 'grep/ignore_test', 'grep')
+call denite#custom#var('grep/ignore_test', {
+\ 'command': ['rg'],
+\ 'default_opts': ['-i', '--vimgrep', '--no-heading', '-g', '!test/', '-g', '!spec/', '-g', '!*_test.go'],
+\ 'recursive_opts': [],
+\ 'pattern_opt': ['--regexp'],
+\ 'separator': ['--'],
+\ 'final_opts': [],
+\ })
+
 " Disable auto_complete in denite-filter
 " ref. https://github.com/Shougo/denite.nvim/issues/657
 autocmd FileType denite-filter call s:denite_filter_my_settings()
