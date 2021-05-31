@@ -13,8 +13,8 @@ bindkey '^E' end-of-line
   alias t='tmux-attach-or-new-session'
 
 # asdf
-[ -f /usr/local/opt/asdf/asdf.sh ] && \
-  . /usr/local/opt/asdf/asdf.sh
+[ -f $(brew --prefix asdf)/asdf.sh ] && \
+  . $(brew --prefix asdf)/asdf.sh
 
 # direnv
 eval "$(direnv hook zsh)"
