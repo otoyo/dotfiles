@@ -7,7 +7,6 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'nanotech/jellybeans.vim'
 Plug 'cocopon/iceberg.vim'
 " Interface
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
@@ -21,8 +20,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim'
-" Python
-Plug 'deoplete-plugins/deoplete-jedi'
 " Ruby
 Plug 'vim-ruby/vim-ruby'
 " TypeScript
@@ -55,10 +52,6 @@ set title
 set ttimeoutlen=10
 
 " Key mappings
-" Deoplete
-inoremap <expr><CR>  pumvisible() ? "<C-y>"  : "<CR>"
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-inoremap <expr><C-p> pumvisible() ? "<Up>"   : "<C-p>"
 " Denite
 nmap <silent> ;f  :<C-u>Denite -start-filter file/rec<CR>
 nmap <silent> ;F  :<C-u>DeniteProjectDir -start-filter file/rec<CR>
