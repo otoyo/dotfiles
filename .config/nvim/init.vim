@@ -7,6 +7,11 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'nanotech/jellybeans.vim'
 Plug 'cocopon/iceberg.vim'
 " Interface
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
@@ -38,7 +43,7 @@ colorscheme iceberg
 " Settings
 set background=dark
 set clipboard+=unnamed
-set completeopt=menuone,noinsert
+"set completeopt=menuone,noinsert
 set cursorline
 set expandtab
 set noincsearch
