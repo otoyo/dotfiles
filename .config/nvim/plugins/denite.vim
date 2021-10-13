@@ -45,7 +45,6 @@ call denite#custom#var('grep/ignore_test', {
 " ref. https://github.com/Shougo/denite.nvim/issues/657
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
-  call deoplete#custom#buffer_option('auto_complete', v:false)
   nmap <silent><buffer> q     <Plug>(denite_filter_quit)
   imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
   nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
