@@ -9,12 +9,12 @@ call defx#custom#option('_', {
 
 " Nerd Fonts
 call defx#custom#column('icon', {
-\ 'directory_icon': '',
+\ 'directory_icon': ' ',
 \ })
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
-  let g:better_whitespace_enabled=0
+  execute 'DisableWhitespace'
 
   nnoremap <silent><buffer><expr> <CR>
   \ defx#is_directory() ? defx#do_action('open') :
