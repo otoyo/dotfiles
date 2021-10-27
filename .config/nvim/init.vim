@@ -10,8 +10,10 @@ Plug 'cocopon/iceberg.vim'
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc-around'
+Plug 'tani/ddc-fuzzy'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
+Plug 'Shougo/pum.vim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }

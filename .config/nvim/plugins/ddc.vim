@@ -4,34 +4,34 @@
 call ddc#custom#patch_global('sources', ['around'])
 
 call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_fuzzy'],
+      \   'sorters': ['sorter_fuzzy'],
+      \   'converters': ['converter_fuzzy'],
+      \ },
       \ 'around': {'mark': 'A'},
       \ })
+
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
       \ })
 
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']},
-      \ })
+
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
 " Mappings
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#manual_complete()
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-
-imap <expr><CR>   pumvisible() ? '<C-y>'   : '<CR>'
-imap <expr><Down> pumvisible() ? '<TAB>'   : '<Down>'
-imap <expr><Up>   pumvisible() ? '<S-TAB>' : '<Up>'
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <Down>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <Up>     <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <silent><expr> <CR>
+      \ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' :
+      \ '<CR>'
 
 " Use ddc.
 call ddc#enable()
