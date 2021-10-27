@@ -1,7 +1,7 @@
 " Customize global settings
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
 
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -10,10 +10,17 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'converters': ['converter_fuzzy'],
       \ },
       \ 'around': {'mark': 'A'},
+      \ 'nvim-lsp': {
+      \   'mark': 'L',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
       \ })
 
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
+      \ })
+
+call ddc#custom#patch_global('sourceParams', {
+      \ 'nvim-lsp': { 'kindLabels': { 'Class': 'c' } },
       \ })
 
 
