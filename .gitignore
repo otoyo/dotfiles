@@ -3,5 +3,6 @@
 # direnv
 .envrc
 
-# Wireshark
-.config/wireshark
+.config/*
+!.config/nvim/
+.config/nvim/.netrwhist
