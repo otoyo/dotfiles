@@ -1,7 +1,7 @@
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
-local servers = { 'solargraph' }
+local servers = { 'solargraph', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     flags = {
