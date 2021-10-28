@@ -59,6 +59,7 @@ augroup END
 call denite#custom#option('default', {
 \ 'auto_action': 'preview',
 \ 'floating_preview': v:true,
+\ 'match_highlight': v:true,
 \ 'preview_height': float2nr(&lines * s:floating_window_height_ratio),
 \ 'preview_width': float2nr(&columns * s:floating_window_width_ratio / 2),
 \ 'prompt': '% ',
