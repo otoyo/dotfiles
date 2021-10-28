@@ -51,10 +51,13 @@ eval "$(direnv hook zsh)"
   bindkey '^T' transpose-chars
 
 # fzf-git
-[ -L ~/.fzf-git.zsh ] && \
+[ -f ~/.fzf-git.zsh ] && \
   source ~/.fzf-git.zsh && \
   bindkey '^G' fzf-git-widget &&\
   bindkey '^H' fzf-git-commit-widget
+
+# $HOME/bin
+export PATH="$PATH:$HOME/bin"
 
 # completion
 [ -d ~/.zsh/completion ] && \
