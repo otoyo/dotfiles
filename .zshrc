@@ -27,6 +27,10 @@ eval "$(direnv hook zsh)"
 [ -d ~/terraform/bin ] && \
   export PATH=$PATH:$HOME/terraform/bin
 
+# Go
+[ -d ~/go/bin ] && \
+  export PATH=$PATH:$HOME/go/bin
+
 # MySQL
 [ -d /usr/local/opt/mysql@5.7/bin ] && \
   export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
