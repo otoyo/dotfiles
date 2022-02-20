@@ -44,3 +44,6 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> yy
   \ defx#do_action('yank_path')
 endfunction
+
+
+nnoremap <silent> ;d :<C-u>Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>

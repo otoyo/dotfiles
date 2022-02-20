@@ -64,5 +64,3 @@ nmap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
 nmap <silent> ;;g :<C-u>Denite grep<CR>
 nmap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
 nmap <silent> ;r  :<C-u>Denite -resume<CR>
-" Defx
-nnoremap <silent> ;d :<C-u>Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
