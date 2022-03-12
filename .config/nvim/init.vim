@@ -14,7 +14,12 @@ Plug 'tani/ddc-fuzzy'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'Shougo/pum.vim'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/ddu.vim'
+Plug 'Shougo/ddu-ui-ff'
+Plug 'Shougo/ddu-source-file_rec'
+Plug 'shun/ddu-source-rg'
+Plug 'Shougo/ddu-filter-matcher_substring'
+Plug 'Shougo/ddu-kind-file'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
@@ -53,14 +58,3 @@ set tabstop=2
 set termguicolors
 set title
 set ttimeoutlen=10
-
-" Key mappings
-" Denite
-nmap <silent> ;f  :<C-u>Denite -start-filter file/rec<CR>
-nmap <silent> ;F  :<C-u>DeniteProjectDir -start-filter file/rec<CR>
-nmap <silent> ;;f :<C-u>DeniteProjectDir file_mru<CR>
-nmap <silent> ;g  :<C-u>DeniteProjectDir grep/ignore_test:::<C-r><C-w><CR>
-nmap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
-nmap <silent> ;;g :<C-u>Denite grep<CR>
-nmap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
-nmap <silent> ;r  :<C-u>Denite -resume<CR>
