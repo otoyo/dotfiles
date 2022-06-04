@@ -24,6 +24,8 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neomru.vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Go
+Plug 'mattn/vim-goimports'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
