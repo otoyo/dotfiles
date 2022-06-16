@@ -60,3 +60,6 @@ set tabstop=2
 set termguicolors
 set title
 set ttimeoutlen=10
+
+" Key mappings(basic)
+nmap bb :ls<CR>:buf 
