@@ -62,4 +62,6 @@ set title
 set ttimeoutlen=10
 
 " Key mappings(basic)
-nmap bb :ls<CR>:buf 
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-H> :ls<CR>:buf 
