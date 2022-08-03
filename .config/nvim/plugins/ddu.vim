@@ -157,4 +157,7 @@ nmap <silent> ;g <Cmd>call ddu#start({
 \     {'name': 'rg', 'params': {'input': expand('<cword>')}}
 \   ],
 \ })<CR>
-nmap <silent> ;d <Cmd>call ddu#start({'name': 'filer'})<CR>
+nmap <silent> ;d <Cmd>call ddu#start({
+\   'name': 'filer',
+\   'uiParams': {'filer': {'search': expand('%:p')}},
+\ })<CR>
