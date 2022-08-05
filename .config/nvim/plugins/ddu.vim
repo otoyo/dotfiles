@@ -107,16 +107,19 @@ function! s:ddu_filter_my_settings() abort
     \ <Cmd>close<CR>
 endfunction
 
+autocmd TabEnter,CursorHold,FocusGained <buffer>
+	\ call ddu#ui#filer#do_action('checkItems')
+
 autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 function! s:ddu_filer_my_settings() abort
   nnoremap <buffer><silent><expr> <CR>
     \ ddu#ui#filer#is_directory() ?
-    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle'})<CR>" :
+    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>"
 
   nnoremap <buffer><silent><expr> <Space>
     \ ddu#ui#filer#is_directory() ?
-    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle'})<CR>" :
+    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>"
 
   nnoremap <buffer><silent> <Esc>
@@ -124,6 +127,9 @@ function! s:ddu_filer_my_settings() abort
 
   nnoremap <buffer><silent> q
     \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
+
+  nnoremap <buffer><silent> ..
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow', 'params': {'path': '..'}})<CR>
 
   nnoremap <buffer><silent> c
     \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'copy'})<CR>
