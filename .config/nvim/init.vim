@@ -8,6 +8,7 @@ Plug 'cocopon/iceberg.vim'
 " Interface
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-ui-native'
 Plug 'Shougo/ddc-around'
 Plug 'Shougo/ddc-nvim-lsp'
 Plug 'tani/ddc-fuzzy'
