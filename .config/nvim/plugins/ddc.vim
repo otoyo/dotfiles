@@ -25,8 +25,6 @@ call ddc#custom#patch_global('sourceParams', {
       \ })
 
 
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
-
 " Mappings
 
 " <TAB>: completion.
