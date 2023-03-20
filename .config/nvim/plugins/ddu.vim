@@ -165,5 +165,5 @@ nmap <silent> ;g <Cmd>call ddu#start({
 \ })<CR>
 nmap <silent> ;d <Cmd>call ddu#start({
 \   'name': 'filer',
-\   'uiParams': {'filer': {'search': expand('%:p')}},
+\   'searchPath': expand('%:p'),
 \ })<CR>
