@@ -113,12 +113,12 @@ autocmd TabEnter,CursorHold,FocusGained <buffer>
 autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 function! s:ddu_filer_my_settings() abort
   nnoremap <buffer><silent><expr> <CR>
-    \ ddu#ui#filer#is_tree() ?
+    \ ddu#ui#get_item()->get('isTree', v:false) ?
     \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle', 'maxLevel': 1})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>"
 
   nnoremap <buffer><silent><expr> <Space>
-    \ ddu#ui#filer#is_tree() ?
+    \ ddu#ui#get_item()->get('isTree', v:false) ?
     \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle', 'maxLevel': 1})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>"
 
