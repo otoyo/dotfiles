@@ -1,29 +1,32 @@
 " Customize global settings
-" Use around source.
-" https://github.com/Shougo/ddc-around
+
+" You must set the default ui.
+" NOTE: native ui
+" https://github.com/Shougo/ddc-ui-native
 call ddc#custom#patch_global('ui', 'native')
-call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
 
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_fuzzy'],
-      \   'sorters': ['sorter_fuzzy'],
-      \   'converters': ['converter_fuzzy'],
-      \ },
-      \ 'around': {'mark': 'A'},
-      \ 'nvim-lsp': {
-      \   'mark': 'L',
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
+" Use around source.
+" https://github.com/Shougo/ddc-source-around
+call ddc#custom#patch_global('sources', ['around'])
+
+" Use matcher_head and sorter_rank.
+" https://github.com/Shougo/ddc-matcher_head
+" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sourceOptions', #{
+      \   _: #{
+      \     matchers: ['matcher_fuzzy'],
+      \     sorters: ['sorter_fuzzy'],
+      \     converters: ['converter_fuzzy']},
+      \   },
+      \ )
+
+" Change source options
+call ddc#custom#patch_global('sourceOptions', #{
+      \   around: #{ mark: 'A' },
       \ })
-
-call ddc#custom#patch_global('sourceParams', {
-      \ 'around': {'maxSize': 500},
+call ddc#custom#patch_global('sourceParams', #{
+      \   around: #{ maxSize: 500 },
       \ })
-
-call ddc#custom#patch_global('sourceParams', {
-      \ 'nvim-lsp': { 'kindLabels': { 'Class': 'c' } },
-      \ })
-
 
 " Mappings
 
