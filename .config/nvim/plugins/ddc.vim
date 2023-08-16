@@ -32,19 +32,15 @@ call ddc#custom#patch_global('sourceParams', #{
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
-\ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+\ pumvisible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#manual_complete()
-inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
+\ '<TAB>' : ddc#map#manual_complete()
+
 imap <silent><expr> <Down>
-\ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :
-\ '<Down>'
+\ pumvisible() ? '<TAB>' : '<Down>'
+
 imap <silent><expr><Up>
-\ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' :
-\ '<Up>'
-imap <silent><expr> <CR>
-\ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' :
-\ '<CR>'
+\ pumvisible() ? '<C-p>' : '<Up>'
 
 " Use ddc.
 call ddc#enable()
