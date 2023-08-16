@@ -55,6 +55,7 @@ call ddu#custom#patch_local('filer', {
 \   ],
 \   'sourceOptions': {
 \     '_': {
+\       'sorters': ['sorter_alpha'],
 \       'columns': ['filename'],
 \     },
 \   },
