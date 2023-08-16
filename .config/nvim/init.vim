@@ -30,10 +30,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 " Go
 Plug 'mattn/vim-goimports'
-" Elixir
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
-Plug 'slashmili/alchemist.vim'
 " Ruby
 Plug 'vim-ruby/vim-ruby'
 " TypeScript
