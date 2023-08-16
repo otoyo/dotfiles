@@ -165,7 +165,9 @@ nmap <silent> ;g <Cmd>call ddu#start({
 \     {'name': 'rg', 'params': {'input': expand('<cword>')}}
 \   ],
 \ })<CR>
-nmap <silent> ;d <Cmd>call ddu#start({
-\   'name': 'filer',
-\   'searchPath': expand('%:p'),
+nmap <silent> ;d <Cmd>call ddu#start(#{
+\   name: 'filer',
+\   sourceOptions: #{
+\     file: #{ path: expand('%:p:h') },
+\   },
 \ })<CR>
