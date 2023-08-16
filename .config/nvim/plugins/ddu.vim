@@ -1,75 +1,75 @@
-call ddu#custom#patch_global({
-\   'ui': 'ff',
-\   'sources': [
-\     {
-\       'name': 'file_rec',
-\       'params': {
-\         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
+call ddu#custom#patch_global(#{
+\   ui: 'ff',
+\   sources: [
+\     #{
+\       name: 'file_rec',
+\       params: #{
+\         ignoredDirectories: ['.git', 'node_modules', 'vendor', '.next']
 \       }
 \     }
 \   ],
-\   'sourceOptions': {
-\     '_': {
-\       'matchers': ['matcher_substring'],
+\   sourceOptions: #{
+\     _: #{
+\       matchers: ['matcher_substring'],
 \     },
 \   },
-\   'filterParams': {
-\     'matcher_substring': {
-\       'highlightMatched': 'Title',
+\   filterParams: #{
+\     matcher_substring: #{
+\       highlightMatched: 'Title',
 \     },
 \   },
-\   'kindOptions': {
-\     'file': {
-\       'defaultAction': 'open',
+\   kindOptions: #{
+\     file: #{
+\       defaultAction: 'open',
 \     },
 \   },
-\   'uiParams': {
-\     'ff': {
-\       'startFilter': v:true,
-\       'prompt': '> ',
-\       'split': 'floating',
+\   uiParams: #{
+\     ff: #{
+\       startFilter: v:true,
+\       prompt: '> ',
+\       split: 'floating',
 \     }
 \   },
 \ })
 
-call ddu#custom#patch_local('grep', {
-\   'sourceParams' : {
-\     'rg' : {
-\       'args': ['--column', '--no-heading', '--color', 'never'],
+call ddu#custom#patch_local('grep', #{
+\   sourceParams : #{
+\     rg : #{
+\       args: ['--column', '--no-heading', '--color', 'never'],
 \     },
 \   },
-\   'uiParams': {
-\     'ff': {
-\       'startFilter': v:false,
+\   uiParams: #{
+\     ff: #{
+\       startFilter: v:false,
 \     }
 \   },
 \ })
 
-call ddu#custom#patch_local('filer', {
-\   'ui': 'filer',
-\   'sources': [
-\     {
-\       'name': 'file',
-\       'params': {},
+call ddu#custom#patch_local('filer', #{
+\   ui: 'filer',
+\   sources: [
+\     #{
+\       name: 'file',
+\       params: #{},
 \     },
 \   ],
-\   'sourceOptions': {
-\     '_': {
-\       'sorters': ['sorter_alpha'],
-\       'columns': ['filename'],
+\   sourceOptions: #{
+\     _: #{
+\       sorters: ['sorter_alpha'],
+\       columns: ['filename'],
 \     },
 \   },
-\   'kindOptions': {
-\     'file': {
-\       'defaultAction': 'open',
+\   kindOptions: #{
+\     file: #{
+\       defaultAction: 'open',
 \     },
 \   },
-\   'uiParams': {
-\     'filer': {
-\       'winWidth': 40,
-\       'sortTreesFirst': v:true,
-\       'split': 'vertical',
-\       'splitDirection': 'topleft',
+\   uiParams: #{
+\     filer: #{
+\       winWidth: 40,
+\       sortTreesFirst: v:true,
+\       split: 'vertical',
+\       splitDirection: 'topleft',
 \     }
 \   },
 \ })
@@ -79,10 +79,10 @@ call ddu#custom#patch_local('filer', {
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><silent> <CR>
-    \ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+    \ <Cmd>call ddu#ui#ff#do_action('itemAction', #{ name: 'open', params: #{ command: 'vsplit' } })<CR>
 
   nnoremap <buffer><silent> <Space>
-    \ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>
+    \ <Cmd>call ddu#ui#ff#do_action('itemAction', #{ name: 'open', params: #{ command: 'split' } })<CR>
 
   nnoremap <buffer><silent> a
     \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
@@ -116,13 +116,13 @@ autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 function! s:ddu_filer_my_settings() abort
   nnoremap <buffer><silent><expr> <CR>
     \ ddu#ui#get_item()->get('isTree', v:false) ?
-    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle', 'maxLevel': 1})<CR>" :
-    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>"
+    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', #{ mode: 'toggle', maxLevel: 1 })<CR>" :
+    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'open', params: #{ command: 'vsplit' } })<CR>"
 
   nnoremap <buffer><silent><expr> <Space>
     \ ddu#ui#get_item()->get('isTree', v:false) ?
-    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', {'mode': 'toggle', 'maxLevel': 1})<CR>" :
-    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>"
+    \ "<Cmd>call ddu#ui#filer#do_action('expandItem', #{ mode: 'toggle', maxLevel: 1 })<CR>" :
+    \ "<Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'open', params: #{ command: 'split' } })<CR>"
 
   nnoremap <buffer><silent> <Esc>
     \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
@@ -131,38 +131,38 @@ function! s:ddu_filer_my_settings() abort
     \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
 
   nnoremap <buffer><silent> ..
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow', 'params': {'path': '..'}})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'narrow', params: #{ path: '..' } })<CR>
 
   nnoremap <buffer><silent> c
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'copy'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'copy' })<CR>
 
   nnoremap <buffer><silent> p
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'paste'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'paste' })<CR>
 
   nnoremap <buffer><silent> d
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'delete'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'delete' })<CR>
 
   nnoremap <buffer><silent> r
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'rename'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'rename' })<CR>
 
   nnoremap <buffer><silent> mv
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'move'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'move' })<CR>
 
   nnoremap <buffer><silent> t
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newFile'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'newFile' })<CR>
 
   nnoremap <buffer><silent> mk
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newDirectory'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'newDirectory' })<CR>
 
   nnoremap <buffer><silent> yy
-    \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'yank'})<CR>
+    \ <Cmd>call ddu#ui#filer#do_action('itemAction', #{ name: 'yank' })<CR>
 endfunction
 
-nmap <silent> ;f <Cmd>call ddu#start({})<CR>
-nmap <silent> ;g <Cmd>call ddu#start({
-\   'name': 'grep',
-\   'sources':[
-\     {'name': 'rg', 'params': {'input': expand('<cword>')}}
+nmap <silent> ;f <Cmd>call ddu#start(#{})<CR>
+nmap <silent> ;g <Cmd>call ddu#start(#{
+\   name: 'grep',
+\   sources: [
+\     #{ name: 'rg', params: #{ input: expand('<cword>') } },
 \   ],
 \ })<CR>
 nmap <silent> ;d <Cmd>call ddu#start(#{
