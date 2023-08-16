@@ -1,7 +1,5 @@
 " Plugins / Make sure you use single quotes
 call plug#begin(stdpath('data') . '/plugged')
-" LSP
-Plug 'neovim/nvim-lspconfig'
 " Color scheme
 Plug 'nanotech/jellybeans.vim'
 Plug 'cocopon/iceberg.vim'
@@ -10,11 +8,9 @@ Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc-ui-native'
 Plug 'Shougo/ddc-around'
-Plug 'Shougo/ddc-nvim-lsp'
 Plug 'tani/ddc-fuzzy'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
-Plug 'Shougo/pum.vim'
 Plug 'Shougo/ddu.vim'
 Plug 'Shougo/ddu-ui-ff'
 Plug 'Shougo/ddu-ui-filer'
