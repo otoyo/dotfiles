@@ -67,6 +67,7 @@ call ddu#custom#patch_local('filer', {
 \   'uiParams': {
 \     'filer': {
 \       'winWidth': 40,
+\       'sortTreesFirst': v:true,
 \       'split': 'vertical',
 \       'splitDirection': 'topleft',
 \     }
