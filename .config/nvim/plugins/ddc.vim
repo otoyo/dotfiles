@@ -42,7 +42,7 @@ inoremap <silent><expr> <Enter>
 imap <silent><expr> <Down>
 \ pumvisible() ? '<TAB>' : '<Down>'
 
-imap <silent><expr><Up>
+imap <silent><expr> <Up>
 \ pumvisible() ? '<C-p>' : '<Up>'
 
 " Use ddc.
