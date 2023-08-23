@@ -36,6 +36,9 @@ inoremap <silent><expr> <TAB>
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
 
+inoremap <silent><expr> <Enter>
+\ pumvisible() ? ddc#map#manual_complete() : '<Enter>'
+
 imap <silent><expr> <Down>
 \ pumvisible() ? '<TAB>' : '<Down>'
 
