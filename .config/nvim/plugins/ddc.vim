@@ -37,10 +37,10 @@ inoremap <silent><expr> <TAB>
 \ '<TAB>' : ddc#map#manual_complete()
 
 inoremap <silent><expr> <Enter>
-\ pumvisible() ? ddc#map#manual_complete() : '<Enter>'
+\ pumvisible() ? '<C-y>' : '<Enter>'
 
 imap <silent><expr> <Down>
-\ pumvisible() ? '<TAB>' : '<Down>'
+\ pumvisible() ? '<C-n>' : '<Down>'
 
 imap <silent><expr> <Up>
 \ pumvisible() ? '<C-p>' : '<Up>'
